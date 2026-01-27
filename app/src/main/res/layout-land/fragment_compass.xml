@@ -26,6 +26,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="?android:attr/colorBackground"
             android:padding="@dimen/root_layout_padding">
 
         <com.bobek.compass.view.CompassView
@@ -154,6 +155,8 @@
     <data>
 
         <import type="android.view.View" />
+
+        <import type="com.bobek.compass.model.LocationStatus" />
 
         <variable
                 name="model"

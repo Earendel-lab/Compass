@@ -21,7 +21,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <merge>
+    <merge
+            android:background="@color/md_theme_dark_background">
 
         <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/device_heading_indicator"
@@ -189,7 +190,5 @@
                 android:layout_height="wrap_content"
                 android:text="@string/degree_330_text"
                 android:textColor="?android:attr/textColorPrimary" />
-
     </merge>
-
 </layout>
