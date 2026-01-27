@@ -1,39 +1,37 @@
 <div align="center">
-
-<img src="fastlane/metadata/android/en-US/images/icon.png" alt="Icon" height="100"/>
+    
+![ic_launcher](https://github.com/user-attachments/assets/9c09c5ab-c6fe-45b7-b173-99cff4715af9)
 
 # Compass
 
 ### Simple and beautiful compass for Android
 
-This project is intended to offer a simple and good-looking compass for Android
+This project is a fork of [Kr0oked/Compass](https://github.com/Kr0oked/Compass) and offers a simple and visually appealing compass for Android.  
+The original project can be downloaded from F-Droid or Google Play (see links below).
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
-alt="Get it on F-Droid"
-height="80">](https://f-droid.org/packages/com.bobek.compass/)
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
-alt="Get it on Google Play"
-height="80">](https://play.google.com/store/apps/details?id=com.bobek.compass)
-[<img src="https://i.ibb.co/q0mdc4Z/get-it-on-github.png"
-alt="Get it on GitHub"
-height="80">](https://github.com/Kr0oked/Compass/releases/latest)
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/com.bobek.compass/)  
+[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.bobek.compass)  
+
+For this fork and the custom APK, see the [Releases](https://github.com/Earendel-lab/Compass/releases/latest).
 
 </div>
 
-## Features
+## Features in this Fork
 
-* Can point to magnetic north as well as true north
-* Shows exact degrees and cardinal direction
-* Displays sensor status
-* Haptic feedback
-* Light and Dark theme
-* No advertisements
-* No trackers
-* No annoyance
+* Custom app icon  
+* Red pointer when facing 0° North  
+* Can point to magnetic north as well as true north  
+* Shows exact degrees and cardinal direction  
+* Displays sensor status  
+* Haptic feedback  
+* Light and Dark theme  
+* No advertisements  
+* No trackers  
+* No annoyance  
 
 ## Screenshots
 
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="Screenshot Light theme" height="500"/>
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="Screenshot Light theme" height="500"/>  
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" alt="Screenshot Dark theme" height="500"/>
 
 ## Translations
@@ -44,5 +42,9 @@ Translations can be added on [Weblate](https://hosted.weblate.org/engage/compass
 
 ## License
 
-The project is licensed under the GNU GPL v3.
-You can find the license text in the [LICENSE](LICENSE) file.
+This project is licensed under the GNU GPL v3.  
+The license text can be found in the [LICENSE](LICENSE) file.
+
+---
+
+**Note:** This fork is a modified version of the original Compass app. For the official app and updates from the original author, please download from F-Droid or Google Play. For this fork with custom features, see the [Releases](https://github.com/Earendel-lab/Compass/releases/latest).
