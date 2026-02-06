@@ -31,9 +31,7 @@ For this fork and the custom APK, see the [Releases](https://github.com/Earendel
 * No annoyance  
 
 ## Screenshots
-
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="Screenshot Light theme" height="500"/>  
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" alt="Screenshot Dark theme" height="500"/>
+![MixCollage-06-Feb-2026-08-34-AM-2682](https://github.com/user-attachments/assets/40d7b79f-8fb5-460d-9d69-052b36c804ef)
 
 ## Translations
 
