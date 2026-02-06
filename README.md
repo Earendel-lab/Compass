@@ -1,6 +1,7 @@
 <div align="center">
     
-![ic_launcher](https://github.com/user-attachments/assets/94183b9a-1fbb-44f4-a6b5-d7a112230d6a)
+<img width="100" height="100" alt="ic_launcher-playstore" src="https://github.com/user-attachments/assets/eb9a7b34-a328-4cf9-84ef-1da4538efa8b" />
+
 
 
 # Compass
