@@ -9,12 +9,9 @@
 ### Simple and beautiful compass for Android
 
 This project is a fork of [Kr0oked/Compass](https://github.com/Kr0oked/Compass) and offers a simple and visually appealing compass for Android.  
-The original project can be downloaded from F-Droid or Google Play (see links below).
+The original project can be downloaded from F-Droid or Google Play.
 
-[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/packages/com.bobek.compass/)  
-[<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="80">](https://play.google.com/store/apps/details?id=com.bobek.compass)  
-
-For this fork and the custom APK, see the [Releases](https://github.com/Earendel-lab/Compass/releases/latest).
+# **For this fork and the custom APK, see the [Releases](https://github.com/Earendel-lab/Compass/releases/latest).**
 
 </div>
 
