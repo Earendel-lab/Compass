@@ -1,6 +1,7 @@
 <div align="center">
     
-![ic_launcher](https://github.com/user-attachments/assets/9c09c5ab-c6fe-45b7-b173-99cff4715af9)
+![ic_launcher](https://github.com/user-attachments/assets/94183b9a-1fbb-44f4-a6b5-d7a112230d6a)
+
 
 # Compass
 
