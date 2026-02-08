@@ -47,12 +47,54 @@
         <item name="colorOnSurfaceInverse">@color/md_theme_light_inverseOnSurface</item>
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
+
+        <!-- Material 3 Expressive Switch Styles -->
+        <item name="android:switchStyle">@style/Widget.App.Switch</item>
+
+        <!-- Rounded Menus and Dialogs -->
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+        <item name="android:elevation">0dp</item>
     </style>
 
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="thumbTint">?attr/colorOnBackground</item>
+        <item name="trackTint">?android:attr/colorBackground</item>
+        <item name="trackDecorationTint">?attr/colorOnBackground</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.LargeComponent</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.LargeComponent" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerSize">32dp</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerSize">32dp</item>
+    </style>
     <style name="Theme.App" parent="Base.Theme.App">
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+
+        <!-- Strict Text Colors -->
+        <item name="android:textColorPrimary">?attr/colorOnBackground</item>
+        <item name="android:textColorSecondary">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColorHint">?attr/colorOutline</item>
+
+        <!-- Ghost Line Cleanup & Menu Rounding -->
+        <item name="android:windowTransitionBackgroundFadeDuration">0</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:defaultFocusHighlightEnabled">false</item>
+        <item name="popupMenuStyle">@style/Widget.App.PopupMenu</item>
+        <item name="android:popupElevation">0dp</item>
+    </style>
+
+    <style name="Widget.App.PopupMenu" parent="Widget.Material3.PopupMenu">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="android:popupBackground">?attr/colorSurface</item>
     </style>
 
     <style name="Theme.App.NoActionBar" parent="Theme.App">

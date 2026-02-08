@@ -28,10 +28,14 @@ import androidx.annotation.AnyRes
 import androidx.annotation.IdRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
+import androidx.core.content.ContextCompat
 import com.bobek.compass.R
 import com.bobek.compass.databinding.CompassViewBinding
 import com.bobek.compass.model.Azimuth
 import com.bobek.compass.util.MathUtils
+import com.google.android.material.color.MaterialColors
+import android.widget.TextView
+import kotlin.math.abs
 
 private const val HAPTIC_FEEDBACK_INTERVAL = 2.0f
 
@@ -97,6 +101,8 @@ class CompassView(context: Context, attributes: AttributeSet) : ConstraintLayout
         val rotation = azimuth.degrees.unaryMinus()
         rotateCompassRoseImage(rotation)
         rotateCompassRoseTexts(rotation)
+        updateHeadingIndicatorColor(azimuth)
+        highlightCardinalDirections(azimuth)
         handleHapticFeedback(azimuth)
 
         visibility = VISIBLE
@@ -148,6 +154,47 @@ class CompassView(context: Context, attributes: AttributeSet) : ConstraintLayout
         constraintSet.constrainCircle(R.id.degree_270_text, center, radius, rotation + 270)
         constraintSet.constrainCircle(R.id.degree_300_text, center, radius, rotation + 300)
         constraintSet.constrainCircle(R.id.degree_330_text, center, radius, rotation + 330)
+    }
+
+    private fun highlightCardinalDirections(azimuth: Azimuth) {
+        val threshold = 1.0f
+        
+        updateCardinalHighlight(binding.cardinalDirectionNorthText, isAligned(azimuth.degrees, 0f, threshold), true)
+        updateCardinalHighlight(binding.cardinalDirectionEastText, isAligned(azimuth.degrees, 90f, threshold), false)
+        updateCardinalHighlight(binding.cardinalDirectionSouthText, isAligned(azimuth.degrees, 180f, threshold), false)
+        updateCardinalHighlight(binding.cardinalDirectionWestText, isAligned(azimuth.degrees, 270f, threshold), false)
+    }
+
+    private fun isAligned(degrees: Float, target: Float, threshold: Float): Boolean {
+        val diff = abs(degrees - target)
+        return diff <= threshold || diff >= (360f - threshold)
+    }
+
+    private fun updateCardinalHighlight(textView: TextView, active: Boolean, isNorth: Boolean) {
+        if (active) {
+            val bgColor = if (isNorth) {
+                ContextCompat.getColor(textView.context, android.R.color.holo_red_dark)
+            } else {
+                MaterialColors.getColor(textView, com.google.android.material.R.attr.colorOnBackground)
+            }
+            val textColor = MaterialColors.getColor(textView, android.R.attr.colorBackground)
+            
+            textView.setBackgroundResource(R.drawable.circle_highlight)
+            textView.background?.setTint(bgColor)
+            textView.setTextColor(textColor)
+        } else {
+            textView.background = null
+            textView.setTextColor(MaterialColors.getColor(textView, com.google.android.material.R.attr.colorOnBackground))
+        }
+    }
+
+    private fun updateHeadingIndicatorColor(azimuth: Azimuth) {
+        val color = if (azimuth.degrees >= 359f || azimuth.degrees <= 1f) {
+            ContextCompat.getColor(context, android.R.color.holo_red_dark)
+        } else {
+            MaterialColors.getColor(this, com.google.android.material.R.attr.colorOnBackground)
+        }
+        binding.deviceHeadingIndicator.setColorFilter(color)
     }
 
     private fun getFloat(@AnyRes id: Int): Float {
