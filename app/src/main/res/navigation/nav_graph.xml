@@ -27,7 +27,7 @@
     <fragment
             android:id="@+id/CompassFragment"
             android:name="com.bobek.compass.CompassFragment"
-            android:label="@string/compass"
+            android:label=""
             tools:layout="@layout/fragment_compass">
 
         <action

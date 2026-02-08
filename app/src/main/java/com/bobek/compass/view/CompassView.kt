@@ -19,6 +19,8 @@
 package com.bobek.compass.view
 
 import android.content.Context
+import android.graphics.PorterDuff
+import android.graphics.PorterDuffColorFilter
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.util.TypedValue.COMPLEX_UNIT_PX
@@ -104,6 +106,20 @@ class CompassView(context: Context, attributes: AttributeSet) : ConstraintLayout
         updateHeadingIndicatorColor(azimuth)
         highlightCardinalDirections(azimuth)
         handleHapticFeedback(azimuth)
+
+        val typedValue = TypedValue()
+        context.theme.resolveAttribute(android.R.attr.textColorPrimary, typedValue, true)
+        val textColorPrimary = ContextCompat.getColor(context, typedValue.resourceId)
+
+        binding.degree0Text.setTextColor(textColorPrimary)
+
+        if (azimuth.roundedDegrees == 0) {
+            binding.cardinalDirectionNorthText.setTextColor(ContextCompat.getColor(context, R.color.red))
+            binding.deviceHeadingIndicator.colorFilter = PorterDuffColorFilter(ContextCompat.getColor(context, R.color.red), PorterDuff.Mode.SRC_IN)
+        } else {
+            binding.cardinalDirectionNorthText.setTextColor(textColorPrimary)
+            binding.deviceHeadingIndicator.clearColorFilter()
+        }
 
         visibility = VISIBLE
     }
