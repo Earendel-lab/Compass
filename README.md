@@ -18,18 +18,18 @@ The original project can be downloaded from F-Droid or Google Play.
 ## Features in this Fork
 
 * Custom app icon  
-* Red pointer when facing 0° North  
+* Red pointer when facing 0° North
 * Can point to magnetic north as well as true north  
 * Shows exact degrees and cardinal direction  
 * Displays sensor status  
 * Haptic feedback  
-* Light and Dark theme  
+* Light and Dark(Amoled) theme
 * No advertisements  
 * No trackers  
 * No annoyance  
 
 ## Screenshots
-![MixCollage-06-Feb-2026-08-34-AM-2682](https://github.com/user-attachments/assets/40d7b79f-8fb5-460d-9d69-052b36c804ef)
+![MixCollage-08-Feb-2026-01-00-PM-951 (1)](https://github.com/user-attachments/assets/a2cb8ac7-7c05-4afd-a3a3-9ac916f30e12)
 
 ## Translations
 
