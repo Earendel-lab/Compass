@@ -26,7 +26,7 @@ class CompassApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        DynamicColors.applyToActivitiesIfAvailable(this)
+        // DynamicColors.applyToActivitiesIfAvailable(this)
 
         val preferenceMigrations = PreferenceMigrations(applicationContext)
         preferenceMigrations.migrateV5()

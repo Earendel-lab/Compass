@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         val navController = getNavController()
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         initPreferenceStore()
     }
