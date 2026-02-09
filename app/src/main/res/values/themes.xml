@@ -48,8 +48,33 @@
         <item name="colorSurfaceInverse">@color/md_theme_light_inverseSurface</item>
         <item name="colorPrimaryInverse">@color/md_theme_light_inversePrimary</item>
 
+        <!-- Preference Refinements -->
+        <item name="preferenceCategoryStyle">@style/Preference.Category.App</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:divider">@null</item>
+        <item name="preferenceIconTint">@color/pure_black</item>
+        <item name="preferenceStyle">@style/Widget.App.Preference</item>
+        <item name="switchPreferenceCompatStyle">@style/Widget.App.Preference.Switch</item>
+        <item name="checkBoxPreferenceStyle">@style/Widget.App.Preference</item>
+        <item name="dialogPreferenceStyle">@style/Widget.App.Preference</item>
+        <item name="editTextPreferenceStyle">@style/Widget.App.Preference</item>
+        <item name="listPreferenceStyle">@style/Widget.App.Preference</item>
+        <item name="preferenceInformationStyle">@style/Widget.App.Preference</item>
+
         <!-- Material 3 Expressive Switch Styles -->
         <item name="android:switchStyle">@style/Widget.App.Switch</item>
+
+        <!-- Force Monochrome Accents -->
+        <item name="colorControlNormal">?attr/colorOnSurfaceVariant</item>
+        <item name="colorControlActivated">?attr/colorOnBackground</item>
+        <item name="colorControlHighlight">?attr/colorOutline</item>
+        <item name="colorAccent">?attr/colorOnBackground</item>
+
+        <!-- Force Surface/Background Monochrome -->
+        <item name="android:colorBackground">@color/pure_white</item>
+        <item name="colorSurface">@color/pure_white</item>
+        <item name="colorSurfaceVariant">@color/pure_white</item>
+        <item name="elevationOverlayEnabled">false</item>
 
         <!-- Rounded Menus and Dialogs -->
         <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
@@ -57,9 +82,9 @@
     </style>
 
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
-        <item name="thumbTint">?attr/colorOnBackground</item>
-        <item name="trackTint">?android:attr/colorBackground</item>
-        <item name="trackDecorationTint">?attr/colorOnBackground</item>
+        <item name="thumbTint">@color/pure_white</item>
+        <item name="trackTint">@color/pure_black</item>
+        <item name="trackDecorationTint">@color/pure_white</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
@@ -100,6 +125,38 @@
     <style name="Theme.App.NoActionBar" parent="Theme.App">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:listDivider">@null</item>
+        <item name="android:divider">@null</item>
     </style>
 
+    <style name="Preference.Category.App" parent="@style/Preference.Category">
+        <item name="allowDividerAbove">false</item>
+        <item name="allowDividerBelow">false</item>
+        <item name="android:layout">@layout/preference_category_app</item>
+        <item name="iconTint">?attr/preferenceIconTint</item>
+    </style>
+
+    <style name="Widget.App.Preference" parent="@style/Preference">
+        <item name="iconTint">?attr/preferenceIconTint</item>
+        <item name="android:textAppearanceListItem">@style/TextAppearance.App.Preference.Title</item>
+        <item name="android:textAppearanceListItemSmall">@style/TextAppearance.App.Preference.Summary</item>
+    </style>
+
+    <style name="Widget.App.Preference.Switch" parent="@style/Preference.SwitchPreferenceCompat">
+        <item name="iconTint">?attr/preferenceIconTint</item>
+        <item name="android:textAppearanceListItem">@style/TextAppearance.App.Preference.Title</item>
+        <item name="android:textAppearanceListItemSmall">@style/TextAppearance.App.Preference.Summary</item>
+    </style>
+
+    <style name="TextAppearance.App.Preference.Title" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnBackground</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+
+    <style name="TextAppearance.App.Preference.Summary" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:alpha">0.6</item>
+    </style>
 </resources>

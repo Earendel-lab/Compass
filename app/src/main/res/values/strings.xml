@@ -70,4 +70,6 @@
     <string name="degree_270_text" translatable="false">270</string>
     <string name="degree_300_text" translatable="false">300</string>
     <string name="degree_330_text" translatable="false">330</string>
+    <string name="rotation_title">Rotation</string>
+    <string name="rotation_summary">Allow the app to switch between portrait and landscape modes as you rotate the device.</string>
 </resources>

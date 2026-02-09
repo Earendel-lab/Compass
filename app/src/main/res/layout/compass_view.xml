@@ -35,8 +35,6 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.textview.MaterialTextView android:id="@+id/cardinal_direction_north_text" android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:includeFontPadding="false" android:text="@string/cardinal_direction_north_abbreviation" android:textColor="?android:attr/textColorPrimary" />
-
                 <com.google.android.material.textview.MaterialTextView android:id="@+id/cardinal_direction_east_text" android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:includeFontPadding="false" android:text="@string/cardinal_direction_east_abbreviation" android:textColor="?android:attr/textColorPrimary" />
 
                 <com.google.android.material.textview.MaterialTextView android:id="@+id/cardinal_direction_south_text" android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:includeFontPadding="false" android:text="@string/cardinal_direction_south_abbreviation" android:textColor="?android:attr/textColorPrimary" />
@@ -66,6 +64,9 @@
                 <com.google.android.material.textview.MaterialTextView android:id="@+id/degree_300_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/degree_300_text" android:textColor="?android:attr/textColorPrimary" />
 
                 <com.google.android.material.textview.MaterialTextView android:id="@+id/degree_330_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/degree_330_text" android:textColor="?android:attr/textColorPrimary" />
+
+                <!-- Z-Index: North rendered last to be on top of Red highlight -->
+                <com.google.android.material.textview.MaterialTextView android:id="@+id/cardinal_direction_north_text" android:layout_width="40dp" android:layout_height="40dp" android:gravity="center" android:includeFontPadding="false" android:text="@string/cardinal_direction_north_abbreviation" android:textColor="?android:attr/textColorPrimary" />
 
         </merge>
 

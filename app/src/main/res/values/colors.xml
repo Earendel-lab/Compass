@@ -26,6 +26,8 @@
   <color name="gray_medium">#666666</color>
   <color name="gray_light">#CCCCCC</color>
   <color name="gray_very_light">#F5F5F5</color>
+  <color name="divider_light">#1A000000</color>
+  <color name="divider_dark">#1AFFFFFF</color>
 
   <!-- Material Light Monochrome -->
   <color name="md_theme_light_primary">#000000</color>
