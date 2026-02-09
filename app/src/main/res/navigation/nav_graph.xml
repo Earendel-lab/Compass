@@ -20,55 +20,28 @@
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/nav_graph"
-        app:startDestination="@id/CompassFragment">
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/CompassFragment">
 
-    <fragment
-            android:id="@+id/CompassFragment"
-            android:name="com.bobek.compass.CompassFragment"
-            android:label=""
-            tools:layout="@layout/fragment_compass">
+        <fragment android:id="@+id/CompassFragment" android:name="com.earendel.compass.CompassFragment" android:label="" tools:layout="@layout/fragment_compass">
 
-        <action
-                android:id="@+id/action_CompassFragment_to_SettingsFragment"
-                app:destination="@id/SettingsFragment" />
-    </fragment>
+                <action android:id="@+id/action_CompassFragment_to_SettingsFragment" app:destination="@id/SettingsFragment" />
+        </fragment>
 
-    <fragment
-            android:id="@+id/SettingsFragment"
-            android:name="com.bobek.compass.SettingsFragment"
-            android:label="@string/settings">
+        <fragment android:id="@+id/SettingsFragment" android:name="com.earendel.compass.SettingsFragment" android:label="@string/settings">
 
-        <action
-                android:id="@+id/action_SettingsFragment_to_ThirdPartyLicensesFragment"
-                app:destination="@id/ThirdPartyLicensesFragment" />
-    </fragment>
+                <action android:id="@+id/action_SettingsFragment_to_ThirdPartyLicensesFragment" app:destination="@id/ThirdPartyLicensesFragment" />
+        </fragment>
 
-    <fragment
-            android:id="@+id/ThirdPartyLicensesFragment"
-            android:name="com.bobek.compass.ThirdPartyLicensesFragment"
-            android:label="@string/third_party_licenses">
+        <fragment android:id="@+id/ThirdPartyLicensesFragment" android:name="com.earendel.compass.ThirdPartyLicensesFragment" android:label="@string/third_party_licenses">
 
-        <action
-                android:id="@+id/action_ThirdPartyLicensesFragment_to_ThirdPartyLicenseFragment"
-                app:destination="@id/ThirdPartyLicenseFragment" />
-    </fragment>
+                <action android:id="@+id/action_ThirdPartyLicensesFragment_to_ThirdPartyLicenseFragment" app:destination="@id/ThirdPartyLicenseFragment" />
+        </fragment>
 
-    <fragment
-            android:id="@+id/ThirdPartyLicenseFragment"
-            android:name="com.bobek.compass.ThirdPartyLicenseFragment"
-            android:label="{libraryName}">
+        <fragment android:id="@+id/ThirdPartyLicenseFragment" android:name="com.earendel.compass.ThirdPartyLicenseFragment" android:label="{libraryName}">
 
-        <argument
-                android:name="libraryName"
-                android:defaultValue=""
-                app:argType="string" />
+                <argument android:name="libraryName" android:defaultValue="" app:argType="string" />
 
-        <argument
-                android:name="licenseContent"
-                android:defaultValue=""
-                app:argType="string" />
-    </fragment>
+                <argument android:name="licenseContent" android:defaultValue="" app:argType="string" />
+        </fragment>
 
 </navigation>

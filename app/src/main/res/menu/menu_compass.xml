@@ -19,26 +19,12 @@
   -->
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:context="com.bobek.compass.MainActivity">
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools" tools:context="com.earendel.compass.MainActivity">
 
-    <item
-            android:id="@+id/action_screen_rotation"
-            android:icon="@drawable/ic_screen_rotation"
-            android:title="@string/lock_screen_rotation"
-            app:showAsAction="ifRoom" />
 
-    <item
-            android:id="@+id/action_sensor_status"
-            android:icon="@drawable/ic_sensor_no_contact"
-            android:title="@string/sensor_status"
-            app:showAsAction="ifRoom" />
+  <item android:id="@+id/action_sensor_status" android:title="@string/sensor_status" app:actionLayout="@layout/sensor_indicator_layout" app:showAsAction="always" />
 
-    <item
-            android:id="@+id/action_settings"
-            android:icon="@drawable/ic_settings"
-            android:title="@string/settings"
-            app:showAsAction="ifRoom" />
+  <item android:id="@+id/action_settings" android:icon="@drawable/ic_settings" android:title="@string/settings" app:showAsAction="ifRoom" />
 
 </menu>

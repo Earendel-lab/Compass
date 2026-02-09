@@ -48,8 +48,34 @@
     <item name="colorSurfaceInverse">@color/md_theme_dark_inverseSurface</item>
     <item name="colorPrimaryInverse">@color/md_theme_dark_inversePrimary</item>
 
+    <!-- Preference Refinements -->
+    <item name="preferenceCategoryStyle">@style/Preference.Category.App</item>
+    <item name="android:listDivider">@null</item>
+    <item name="android:divider">@null</item>
+    <item name="preferenceIconTint">@color/pure_white</item>
+    <item name="preferenceStyle">@style/Widget.App.Preference</item>
+    <item name="switchPreferenceCompatStyle">@style/Widget.App.Preference.Switch</item>
+    <item name="checkBoxPreferenceStyle">@style/Widget.App.Preference</item>
+    <item name="dialogPreferenceStyle">@style/Widget.App.Preference</item>
+    <item name="editTextPreferenceStyle">@style/Widget.App.Preference</item>
+    <item name="listPreferenceStyle">@style/Widget.App.Preference</item>
+    <item name="preferenceInformationStyle">@style/Widget.App.Preference</item>
+
     <!-- Material 3 Expressive Switch Styles -->
     <item name="android:switchStyle">@style/Widget.App.Switch</item>
+
+    <!-- Force Monochrome Accents -->
+    <item name="colorControlNormal">?attr/colorOnSurfaceVariant</item>
+    <item name="colorControlActivated">?attr/colorOnBackground</item>
+    <item name="colorControlHighlight">?attr/colorOutline</item>
+    <item name="colorAccent">?attr/colorOnBackground</item>
+
+    <!-- Force Pure AMOLED Black Surface/Background -->
+    <item name="android:colorBackground">@color/pure_black</item>
+    <item name="colorSurface">@color/pure_black</item>
+    <item name="colorSurfaceVariant">@color/pure_black</item>
+    <item name="elevationOverlayEnabled">false</item>
+    <item name="android:windowBackground">@color/pure_black</item>
 
     <!-- Rounded Menus and Dialogs -->
     <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
@@ -71,6 +97,13 @@
     <item name="android:defaultFocusHighlightEnabled">false</item>
     <item name="popupMenuStyle">@style/Widget.App.PopupMenu</item>
     <item name="android:popupElevation">0dp</item>
+    <item name="android:switchStyle">@style/Widget.App.Switch</item>
+  </style>
+
+  <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+    <item name="thumbTint">@color/pure_white</item>
+    <item name="trackTint">@color/pure_black</item>
+    <item name="trackDecorationTint">@color/pure_white</item>
   </style>
 
   <style name="Widget.App.PopupMenu" parent="Widget.Material3.PopupMenu">

@@ -20,8 +20,19 @@
 
 <resources>
 
-    <declare-styleable name="CompassView">
-        <attr name="azimuth" format="float" />
-    </declare-styleable>
+  <declare-styleable name="CompassView">
+    <attr name="azimuth" format="float" />
+    <attr name="rotationEnabled" format="boolean" />
+  </declare-styleable>
+
+  <attr name="preferenceIconTint" format="color" />
+  <attr name="preferenceStyle" format="reference" />
+  <attr name="preferenceCategoryStyle" format="reference" />
+  <attr name="switchPreferenceCompatStyle" format="reference" />
+  <attr name="listPreferenceStyle" format="reference" />
+  <attr name="checkBoxPreferenceStyle" format="reference" />
+  <attr name="dialogPreferenceStyle" format="reference" />
+  <attr name="editTextPreferenceStyle" format="reference" />
+  <attr name="preferenceInformationStyle" format="reference" />
 
 </resources>
