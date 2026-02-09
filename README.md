@@ -29,7 +29,8 @@ The original project can be downloaded from F-Droid or Google Play.
 * No annoyance  
 
 ## Screenshots
-![MixCollage-08-Feb-2026-01-00-PM-951 (1)](https://github.com/user-attachments/assets/a2cb8ac7-7c05-4afd-a3a3-9ac916f30e12)
+![1000010536](https://github.com/user-attachments/assets/6bbb08f9-6d7a-4601-8922-ca85f330f7e5)
+
 
 ## Translations
 
