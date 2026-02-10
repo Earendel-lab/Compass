@@ -73,7 +73,8 @@
     <!-- Force Pure AMOLED Black Surface/Background -->
     <item name="android:colorBackground">@color/pure_black</item>
     <item name="colorSurface">@color/pure_black</item>
-    <item name="colorSurfaceVariant">@color/pure_black</item>
+    <!-- Use soft charcoal containers on dark mode (island) -->
+    <item name="colorSurfaceVariant">@color/island_dark</item>
     <item name="elevationOverlayEnabled">false</item>
     <item name="android:windowBackground">@color/pure_black</item>
 
@@ -104,6 +105,8 @@
     <item name="thumbTint">@color/pure_white</item>
     <item name="trackTint">@color/pure_black</item>
     <item name="trackDecorationTint">@color/pure_white</item>
+    <item name="android:minWidth">48dp</item>
+    <item name="android:minHeight">24dp</item>
   </style>
 
   <style name="Widget.App.PopupMenu" parent="Widget.Material3.PopupMenu">

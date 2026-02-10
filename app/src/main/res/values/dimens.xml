@@ -21,6 +21,13 @@
 <resources>
     <dimen name="root_layout_padding">16dp</dimen>
 
+  <!-- Island / preferences UI -->
+  <dimen name="island_corner_radius">28dp</dimen>
+  <dimen name="island_internal_padding">24dp</dimen>
+  <dimen name="island_horizontal_margin">12dp</dimen>
+  <dimen name="island_vertical_gap">16dp</dimen>
+  <dimen name="preference_icon_size">28dp</dimen>
+
     <dimen name="cardinal_direction_text_ratio">0.20f</dimen>
     <dimen name="degree_text_ratio">0.04f</dimen>
 

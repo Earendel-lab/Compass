@@ -46,11 +46,11 @@
   <color name="md_theme_light_errorContainer">#FFDAD6</color>
   <color name="md_theme_light_onError">#FFFFFF</color>
   <color name="md_theme_light_onErrorContainer">#410002</color>
-  <color name="md_theme_light_background">#FFFFFF</color>
+  <color name="md_theme_light_background">#F2F2F2</color>
   <color name="md_theme_light_onBackground">#000000</color>
-  <color name="md_theme_light_surface">#FFFFFF</color>
+  <color name="md_theme_light_surface">#F2F2F2</color>
   <color name="md_theme_light_onSurface">#000000</color>
-  <color name="md_theme_light_surfaceVariant">#F5F5F5</color>
+  <color name="md_theme_light_surfaceVariant">#D4D4D4</color>
   <color name="md_theme_light_onSurfaceVariant">#1A1A1A</color>
   <color name="md_theme_light_outline">#CCCCCC</color>
   <color name="md_theme_light_inverseOnSurface">#FFFFFF</color>
@@ -82,7 +82,11 @@
   <color name="md_theme_dark_onBackground">#FFFFFF</color>
   <color name="md_theme_dark_surface">#000000</color>
   <color name="md_theme_dark_onSurface">#FFFFFF</color>
-  <color name="md_theme_dark_surfaceVariant">#1A1A1A</color>
+  <color name="md_theme_dark_surfaceVariant">#1B1B1B</color>
+  <!-- Island / card colors per user request -->
+  <color name="island_dark">#1B1B1B</color>
+  <!-- Light mode containers should be pure white per revamp -->
+  <color name="island_light">#FFFFFF</color>
   <color name="md_theme_dark_onSurfaceVariant">#E0E0E0</color>
   <color name="md_theme_dark_outline">#333333</color>
   <color name="md_theme_dark_inverseOnSurface">#000000</color>

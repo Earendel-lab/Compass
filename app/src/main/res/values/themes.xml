@@ -70,10 +70,10 @@
         <item name="colorControlHighlight">?attr/colorOutline</item>
         <item name="colorAccent">?attr/colorOnBackground</item>
 
-        <!-- Force Surface/Background Monochrome -->
-        <item name="android:colorBackground">@color/pure_white</item>
-        <item name="colorSurface">@color/pure_white</item>
-        <item name="colorSurfaceVariant">@color/pure_white</item>
+        <!-- Force Surface/Background Monochrome -> use expressive palette -->
+        <item name="android:colorBackground">@color/md_theme_light_background</item>
+        <item name="colorSurface">@color/md_theme_light_surface</item>
+        <item name="colorSurfaceVariant">@color/island_light</item>
         <item name="elevationOverlayEnabled">false</item>
 
         <!-- Rounded Menus and Dialogs -->
@@ -85,6 +85,8 @@
         <item name="thumbTint">@color/pure_white</item>
         <item name="trackTint">@color/pure_black</item>
         <item name="trackDecorationTint">@color/pure_white</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">24dp</item>
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
@@ -150,13 +152,14 @@
 
     <style name="TextAppearance.App.Preference.Title" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textColor">?attr/colorOnBackground</item>
-        <item name="android:textSize">9sp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="TextAppearance.App.Preference.Summary" parent="TextAppearance.Material3.BodySmall">
         <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:alpha">0.6</item>
+        <item name="android:alpha">0.7</item>
     </style>
 </resources>
