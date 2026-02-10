@@ -81,24 +81,21 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:layout_marginBottom="12dp"
-                    android:paddingVertical="8dp">
+                    android:layout_marginBottom="12dp">
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Use True North"
                         android:textSize="15sp"
                         android:textColor="?attr/colorOnBackground" />
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
+                    <com.earendel.compass.view.CustomToggleSwitch
                         android:id="@+id/switch_true_north"
-                        style="?android:attr/switchStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:showText="false"
-                        android:focusable="true" />
+                        android:layout_width="60dp"
+                        android:layout_height="36dp"
+                        android:contentDescription="Use True North" />
 
                 </LinearLayout>
 
@@ -107,23 +104,21 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:paddingVertical="8dp">
+                    android:layout_marginBottom="12dp">
 
                     <TextView
                         android:layout_width="0dp"
-                        android:layout_weight="1"
                         android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:text="Haptic Feedback"
                         android:textSize="15sp"
                         android:textColor="?attr/colorOnBackground" />
 
-                    <com.google.android.material.switchmaterial.SwitchMaterial
+                    <com.earendel.compass.view.CustomToggleSwitch
                         android:id="@+id/switch_haptic"
-                        style="?android:attr/switchStyle"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:showText="false"
-                        android:focusable="true" />
+                        android:layout_width="60dp"
+                        android:layout_height="36dp"
+                        android:contentDescription="Haptic Feedback" />
 
                 </LinearLayout>
 
@@ -290,23 +285,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:paddingVertical="8dp">
+                android:layout_marginTop="12dp">
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Allow Rotation"
                     android:textSize="15sp"
                     android:textColor="?attr/colorOnBackground" />
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
+                <com.earendel.compass.view.CustomToggleSwitch
                     android:id="@+id/switch_rotation"
-                    style="?android:attr/switchStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:showText="false"
-                    android:focusable="true" />
+                    android:layout_width="60dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="Allow Rotation" />
 
             </LinearLayout>
 
@@ -358,41 +351,93 @@
                 android:orientation="vertical"
                 android:layout_marginTop="4dp">
 
-                <TextView
-                    android:id="@+id/author_link"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/author_name"
-                    android:textSize="15sp"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="8dp" />
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Author"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:id="@+id/author_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/author_name"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnBackground" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/license_link"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/license_name"
-                    android:textSize="15sp"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="8dp" />
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="License"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:id="@+id/license_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/license_name"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnBackground" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/third_party_link"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/third_party_licenses"
-                    android:textSize="15sp"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="8dp" />
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Third Party Licenses"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:id="@+id/third_party_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/third_party_licenses"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnBackground" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/source_code_link"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/source_code_name"
-                    android:textSize="15sp"
-                    android:textColor="?attr/colorOnBackground"
-                    android:layout_marginBottom="12dp" />
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Source Code"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:alpha="0.7"
+                        android:layout_marginBottom="4dp" />
+                    <TextView
+                        android:id="@+id/source_code_link"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/source_code_name"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorOnBackground" />
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"

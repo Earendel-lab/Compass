@@ -25,12 +25,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioGroup
-import com.google.android.material.switchmaterial.SwitchMaterial
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.preference.PreferenceManager
+import com.earendel.compass.view.CustomToggleSwitch
 
 class SettingsFragment : Fragment() {
 
@@ -47,22 +47,22 @@ class SettingsFragment : Fragment() {
 
         val prefs = PreferenceManager.getDefaultSharedPreferences(requireContext())
 
-        // Compass switches
-        val switchTrueNorth = view.findViewById<SwitchMaterial>(R.id.switch_true_north)
-        val switchHaptic = view.findViewById<SwitchMaterial>(R.id.switch_haptic)
-        switchTrueNorth.isChecked = prefs.getBoolean("true_north", false)
-        switchHaptic.isChecked = prefs.getBoolean("haptic_feedback", true)
-        switchTrueNorth.setOnCheckedChangeListener { _, checked ->
+        // Compass switches (Custom Toggles)
+        val switchTrueNorth = view.findViewById<CustomToggleSwitch>(R.id.switch_true_north)
+        val switchHaptic = view.findViewById<CustomToggleSwitch>(R.id.switch_haptic)
+        switchTrueNorth.setChecked(prefs.getBoolean("true_north", false))
+        switchHaptic.setChecked(prefs.getBoolean("haptic_feedback", true))
+        switchTrueNorth.setOnCheckedChangeListener { checked ->
             prefs.edit().putBoolean("true_north", checked).apply()
         }
-        switchHaptic.setOnCheckedChangeListener { _, checked ->
+        switchHaptic.setOnCheckedChangeListener { checked ->
             prefs.edit().putBoolean("haptic_feedback", checked).apply()
         }
 
-        // Rotation
-        val switchRotation = view.findViewById<SwitchMaterial>(R.id.switch_rotation)
-        switchRotation.isChecked = prefs.getBoolean("is_rotation_enabled", true)
-        switchRotation.setOnCheckedChangeListener { _, checked ->
+        // Rotation (Custom Toggle)
+        val switchRotation = view.findViewById<CustomToggleSwitch>(R.id.switch_rotation)
+        switchRotation.setChecked(prefs.getBoolean("is_rotation_enabled", true))
+        switchRotation.setOnCheckedChangeListener { checked ->
             prefs.edit().putBoolean("is_rotation_enabled", checked).apply()
         }
 

@@ -82,11 +82,12 @@
     </style>
 
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+        <item name="android:thumb">@drawable/m3_switch_thumb</item>
+        <item name="android:track">@drawable/m3_switch_track</item>
         <item name="thumbTint">@color/pure_white</item>
         <item name="trackTint">@color/pure_black</item>
         <item name="trackDecorationTint">@color/pure_white</item>
-        <item name="android:minWidth">48dp</item>
-        <item name="android:minHeight">24dp</item>
+        <!-- Proportions enforced by thumb/track drawables (avoid unknown style attrs) -->
     </style>
 
     <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
@@ -148,6 +149,8 @@
         <item name="iconTint">?attr/preferenceIconTint</item>
         <item name="android:textAppearanceListItem">@style/TextAppearance.App.Preference.Title</item>
         <item name="android:textAppearanceListItemSmall">@style/TextAppearance.App.Preference.Summary</item>
+        <!-- Ensure preference switches use the app's M3 expressive switch drawables -->
+        <item name="android:switchStyle">@style/Widget.App.Switch</item>
     </style>
 
     <style name="TextAppearance.App.Preference.Title" parent="TextAppearance.Material3.BodySmall">

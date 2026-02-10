@@ -102,11 +102,12 @@
   </style>
 
   <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
+    <item name="android:thumb">@drawable/m3_switch_thumb</item>
+    <item name="android:track">@drawable/m3_switch_track</item>
     <item name="thumbTint">@color/pure_white</item>
     <item name="trackTint">@color/pure_black</item>
     <item name="trackDecorationTint">@color/pure_white</item>
-    <item name="android:minWidth">48dp</item>
-    <item name="android:minHeight">24dp</item>
+    <!-- Proportions enforced by thumb/track drawables (avoid unknown style attrs) -->
   </style>
 
   <style name="Widget.App.PopupMenu" parent="Widget.Material3.PopupMenu">
