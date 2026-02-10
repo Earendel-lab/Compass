@@ -21,8 +21,8 @@
     <color name="md_theme_dark_onBackground">#FFFFFF</color>
     <color name="md_theme_dark_surface">#000000</color>
     <color name="md_theme_dark_onSurface">#FFFFFF</color>
-    <color name="md_theme_dark_surfaceVariant">#000000</color>
-    <color name="md_theme_dark_onSurfaceVariant">#AAAAAA</color>
+    <color name="md_theme_dark_surfaceVariant">#1B1B1B</color>
+    <color name="md_theme_dark_onSurfaceVariant">#D0D0D0</color>
     <color name="md_theme_dark_outline">#666666</color>
     <color name="md_theme_dark_inverseOnSurface">#000000</color>
     <color name="md_theme_dark_inverseSurface">#FFFFFF</color>

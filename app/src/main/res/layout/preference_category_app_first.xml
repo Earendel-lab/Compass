@@ -1,10 +1,36 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/island_horizontal_margin"
+    android:layout_marginEnd="@dimen/island_horizontal_margin"
+    android:layout_marginTop="@dimen/island_vertical_gap">
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="16dp" android:paddingTop="24dp" android:paddingEnd="16dp" android:paddingBottom="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/island_background"
+        android:padding="@dimen/island_internal_padding"
+        android:animateLayoutChanges="false"
+        android:clipToPadding="false">
 
-        <ImageView android:id="@android:id/icon" android:layout_width="24dp" android:layout_height="24dp" android:layout_marginEnd="16dp" android:tint="?attr/preferenceIconTint" />
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="@dimen/preference_icon_size"
+            android:layout_height="@dimen/preference_icon_size"
+            android:layout_marginEnd="16dp"
+            android:tint="?attr/preferenceIconTint"
+            android:contentDescription="" />
 
-        <TextView android:id="@android:id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textAllCaps="true" android:textColor="?attr/colorOnSurfaceVariant" android:textSize="13sp" android:fontFamily="sans-serif-medium" />
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

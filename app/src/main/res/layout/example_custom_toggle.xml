@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Example 1: Basic toggle -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Enable Feature"
+            android:textSize="15sp"
+            android:textColor="?attr/colorOnBackground" />
+
+        <com.earendel.compass.view.CustomToggleSwitch
+            android:id="@+id/toggle_feature"
+            android:layout_width="60dp"
+            android:layout_height="36dp" />
+
+    </LinearLayout>
+
+    <!-- Example 2: Another toggle -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Another Option"
+            android:textSize="15sp"
+            android:textColor="?attr/colorOnBackground" />
+
+        <com.earendel.compass.view.CustomToggleSwitch
+            android:id="@+id/toggle_option"
+            android:layout_width="60dp"
+            android:layout_height="36dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

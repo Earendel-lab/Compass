@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Checked state track (44x28, radius 14 to match height) -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <size android:width="44dp" android:height="28dp" />
+            <corners android:radius="14dp" />
+            <solid android:color="@color/md_theme_light_primary" />
+        </shape>
+    </item>
+
+    <!-- Default (unchecked) track -->
+    <item>
+        <shape android:shape="rectangle">
+            <size android:width="44dp" android:height="28dp" />
+            <corners android:radius="14dp" />
+            <solid android:color="@color/gray_light" />
+        </shape>
+    </item>
+</selector>
