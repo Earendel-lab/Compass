@@ -84,9 +84,7 @@
     <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
         <item name="android:thumb">@drawable/m3_switch_thumb</item>
         <item name="android:track">@drawable/m3_switch_track</item>
-        <item name="thumbTint">@color/pure_white</item>
-        <item name="trackTint">@color/pure_black</item>
-        <item name="trackDecorationTint">@color/pure_white</item>
+
         <!-- Proportions enforced by thumb/track drawables (avoid unknown style attrs) -->
     </style>
 

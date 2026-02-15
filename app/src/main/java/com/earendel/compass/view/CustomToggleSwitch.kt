@@ -56,6 +56,14 @@ class CustomToggleSwitch @JvmOverloads constructor(
         style = Paint.Style.FILL
     }
 
+    // Paint for checkmark icon
+    private val checkPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        style = Paint.Style.STROKE
+        strokeWidth = 2f
+        strokeCap = Paint.Cap.ROUND
+        strokeJoin = Paint.Join.ROUND
+    }
+
     // M3 Colors - On state
     private val colorOnTrack = Color.parseColor("#000000") // AMOLED Black
     private val colorOnThumb = Color.WHITE
@@ -67,9 +75,9 @@ class CustomToggleSwitch @JvmOverloads constructor(
     // Dimensions (M3 standard: 52dp x 32dp)
     private val trackHeightDp = 32f
     private val trackWidthDp = 52f
-    private val thumbRadiusMinDp = 12f  // Keep previous small thumb when off
-    private val thumbRadiusMaxDp = 14f  // Keep previous larger thumb when on
-    private val offShiftDp = 3f // shift the off thumb slightly toward right
+    private val thumbRadiusMinDp = 10f  // OFF state: 20dp diameter
+    private val thumbRadiusMaxDp = 13f  // ON state: 26dp diameter
+    private val offShiftDp = 0f // Will be handled in positioning logic
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -101,9 +109,17 @@ class CustomToggleSwitch @JvmOverloads constructor(
         val trackPadding = 3f // Small padding from edge
         val minX = trackPadding + thumbRadius
         val maxX = width - trackPadding - thumbRadius
-        val extraShift = offShiftDp.dpToPx()
-        // When off (thumbPosition=0) place thumb slightly right by extraShift, when on (1) at maxX
-        val thumbX = (minX + extraShift) * (1f - thumbPosition) + maxX * thumbPosition
+        // When ON: shift thumb toward left (more padding on right)
+        // When OFF: shift thumb toward right (gap from left edge)
+        val onStateShiftLeft = 5f.dpToPx() // Left shift when ON
+        val offStateShiftRight = 5f.dpToPx() // Right shift when OFF for gap from left (increased)
+        val thumbX = if (thumbPosition > 0.5f) {
+            // Transitioning to or at ON state - shift left
+            (minX + offStateShiftRight) * (1f - thumbPosition) + (maxX - onStateShiftLeft) * thumbPosition
+        } else {
+            // Transitioning to or at OFF state - shift right
+            (minX + offStateShiftRight) * (1f - thumbPosition) + maxX * thumbPosition
+        }
 
         // Draw shadow/elevation for thumb
         shadowPaint.color = Color.argb(20, 0, 0, 0)
@@ -115,6 +131,27 @@ class CustomToggleSwitch @JvmOverloads constructor(
         thumbPaint.color = thumbColor
         thumbPaint.setShadowLayer(0f, 0f, 0f, Color.TRANSPARENT)
         canvas.drawCircle(thumbX, centerY, thumbRadius, thumbPaint)
+
+        // Draw checkmark icon when ON
+        if (isChecked && thumbSizeProgress > 0.3f) {
+            // Scale checkmark based on thumb size
+            val checkScale = thumbRadius / 13f.dpToPx() // Scale to thumb size
+            val checkSize = 11f.dpToPx() * checkScale // Increased from 8f for bigger tick
+            
+            checkPaint.color = Color.BLACK
+            checkPaint.strokeWidth = 3f * checkScale // Increased from 2.5f
+            
+            // Draw checkmark path (simplified tick)
+            val checkPath = Path().apply {
+                // Start point (bottom left of check)
+                moveTo(thumbX - checkSize * 0.3f, centerY)
+                // Middle point (bottom of check)
+                lineTo(thumbX - checkSize * 0.1f, centerY + checkSize * 0.25f)
+                // End point (top right of check)
+                lineTo(thumbX + checkSize * 0.35f, centerY - checkSize * 0.3f)
+            }
+            canvas.drawPath(checkPath, checkPaint)
+        }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
