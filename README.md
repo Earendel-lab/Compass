@@ -43,6 +43,9 @@ Translations can be added on [Weblate](https://hosted.weblate.org/engage/compass
 This project is licensed under the GNU GPL v3.  
 The license text can be found in the [LICENSE](LICENSE) file.
 
----
+## Cloning this Repository
+```
+git clone https://github.com/Earendel-lab/Compass.git
+```
 
 **Note:** This fork is a modified version of the original Compass app. For the official app and updates from the original author, please download from F-Droid or Google Play. For this fork with custom features, see the [Releases](https://github.com/Earendel-lab/Compass/releases/latest).
