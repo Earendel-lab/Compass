@@ -1,11 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Checked state track (44x28, radius 14 to match height) -->
+    <!-- Checked state track (44x28, radius 14) -->
     <item android:state_checked="true">
         <shape android:shape="rectangle">
             <size android:width="44dp" android:height="28dp" />
             <corners android:radius="14dp" />
-            <solid android:color="@color/md_theme_light_primary" />
+            <!-- Monochrome: Black track when ON -->
+            <solid android:color="@color/pure_black" />
+            <!-- Optional: add stroke if background is black? User asked for "monochrome". 
+                 If theme is dark, black track might be invisible. 
+                 But user said "like the image" which showed a dark purple track on light.
+                 And "monochrome". Let's assume standard monochrome: Black on Light, White on Dark?
+                 Safest is pure_black for now as requested by "monochrome".
+            -->
         </shape>
     </item>
 
@@ -14,7 +20,9 @@
         <shape android:shape="rectangle">
             <size android:width="44dp" android:height="28dp" />
             <corners android:radius="14dp" />
-            <solid android:color="@color/gray_light" />
+            <!-- Light gray outline/fill for unchecked -->
+            <solid android:color="@android:color/transparent" />
+            <stroke android:width="2dp" android:color="@color/gray_light" />
         </shape>
     </item>
 </selector>
