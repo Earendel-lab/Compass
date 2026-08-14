@@ -17,26 +17,14 @@ The original project can be downloaded from F-Droid or Google Play.
 
 ## Features in this Fork
 
-* Custom app icon  
 * Red pointer when facing 0° North
-* Can point to magnetic north as well as true north  
-* Shows exact degrees and cardinal direction  
-* Displays sensor status  
-* Haptic feedback  
-* Light and Dark(Amoled) theme
-* No advertisements  
-* No trackers  
-* No annoyance  
+* Displays sensor status   
+* Inclinometer/Anglemeter
+* No advertisements, trackers & annoyance 
 
 ## Screenshots
-![1000010536](https://github.com/user-attachments/assets/6bbb08f9-6d7a-4601-8922-ca85f330f7e5)
+<img width="785" height="500" alt="Currency" src="https://github.com/user-attachments/assets/32081c92-d0ab-4620-a67c-e0a8bc6a6044" />
 
-
-## Translations
-
-Translations can be added on [Weblate](https://hosted.weblate.org/engage/compass/).
-
-[![Translation status](https://hosted.weblate.org/widget/compass/multi-auto.svg)](https://hosted.weblate.org/engage/compass/)
 
 ## License
 
