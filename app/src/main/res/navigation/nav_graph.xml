@@ -20,7 +20,12 @@
 
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/CompassFragment">
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph" app:startDestination="@id/PagerFragment">
+
+        <fragment android:id="@+id/PagerFragment" android:name="com.earendel.compass.PagerFragment" android:label="" tools:layout="@layout/fragment_pager">
+
+                <action android:id="@+id/action_PagerFragment_to_SettingsFragment" app:destination="@id/SettingsFragment" />
+        </fragment>
 
         <fragment android:id="@+id/CompassFragment" android:name="com.earendel.compass.CompassFragment" android:label="" tools:layout="@layout/fragment_compass">
 

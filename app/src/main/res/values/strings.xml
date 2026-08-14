@@ -48,6 +48,7 @@
     <string name="third_party_licenses">Third-party licenses</string>
     <string name="third_party_licenses_summary">Licenses of included open source libraries</string>
     <string name="source_code">Source code</string>
+    <string name="original_source_code">Original Source code</string>
     <string name="version">Version</string>
     <string name="error_message">An error occurred.\nMessage: %1$s\nCode: %2$s</string>
     <string name="error">Error</string>
@@ -55,7 +56,7 @@
     <string name="no_thanks">No thanks</string>
     <string name="source_code_name" translatable="false">GitHub</string>
     <string name="license_name" translatable="false">GNU GPLv3</string>
-    <string name="author_name" translatable="false">Philipp Bobek</string>
+    <string name="author_name" translatable="false">Earendel</string>
     <string name="zero_degrees" translatable="false">0°</string>
     <string name="degrees" translatable="false">%1$d°</string>
     <string name="degree_0_text" translatable="false">0</string>

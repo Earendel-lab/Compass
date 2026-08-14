@@ -52,7 +52,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.earendel.compass.databinding.FragmentCompassBinding
@@ -76,8 +76,7 @@ private const val TAG = "CompassFragment"
 
 class CompassFragment : Fragment() {
 
-    private val compassViewModel: CompassViewModel by viewModels()
-    private val compassMenuProvider = CompassMenuProvider()
+    private val compassViewModel: CompassViewModel by activityViewModels()
     private val compassSensorEventListener = CompassSensorEventListener()
 
     private var binding: FragmentCompassBinding? = null
@@ -97,7 +96,6 @@ class CompassFragment : Fragment() {
         initPreferenceStore()
         setupSystemServices()
         adjustLayoutToSystemBars()
-        setupMenu()
     }
 
     private fun initBinding() {
@@ -139,10 +137,6 @@ class CompassFragment : Fragment() {
             }
             WindowInsetsCompat.CONSUMED
         }
-    }
-
-    private fun setupMenu() {
-        requireActivity().addMenuProvider(compassMenuProvider, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 
     override fun onResume() {
@@ -335,117 +329,6 @@ class CompassFragment : Fragment() {
         preferenceStore = null
         sensorManager = null
         locationManager = null
-    }
-
-
-    private inner class CompassMenuProvider : MenuProvider {
-
-        private var optionsMenu: Menu? = null
-
-        override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-            menuInflater.inflate(R.menu.menu_compass, menu)
-            optionsMenu = menu
-            
-            val sensorItem = menu.findItem(R.id.action_sensor_status)
-            sensorItem.actionView?.setOnClickListener { 
-                onMenuItemSelected(sensorItem)
-            }
-            
-            compassViewModel.sensorAccuracy.observe(viewLifecycleOwner) { updateSensorStatusIcon(it) }
-        }
-
-        private fun updateSensorStatusIcon(sensorAccuracy: SensorAccuracy) {
-            val menuItem = optionsMenu?.findItem(R.id.action_sensor_status) ?: return
-            
-            // Update legacy icon just in case
-            menuItem.setIcon(sensorAccuracy.iconResourceId)
-
-            // Update new ActionView (Vertical Pills)
-            val actionView = menuItem.actionView
-            if (actionView != null) {
-                val pill1 = actionView.findViewById<View>(R.id.sensor_pill_small)
-                val pill2 = actionView.findViewById<View>(R.id.sensor_pill_medium)
-                val pill3 = actionView.findViewById<View>(R.id.sensor_pill_large)
-                
-                if (pill1 != null && pill2 != null && pill3 != null) {
-                    val typedValue = android.util.TypedValue()
-                    requireContext().theme.resolveAttribute(android.R.attr.isLightTheme, typedValue, true)
-                    val isLightTheme = typedValue.data != 0
-                    
-                    val activeColor = ContextCompat.getColor(requireContext(), if (isLightTheme) R.color.pure_black else R.color.pure_white)
-                    val inactiveColor = ContextCompat.getColor(requireContext(), R.color.gray_medium)
-                    val errorColor = ContextCompat.getColor(requireContext(), android.R.color.holo_red_dark)
-                    
-                    when (sensorAccuracy) {
-                        SensorAccuracy.HIGH -> {
-                            pill1.background?.setTint(activeColor); pill1.alpha = 1.0f
-                            pill2.background?.setTint(activeColor); pill2.alpha = 1.0f
-                            pill3.background?.setTint(activeColor); pill3.alpha = 1.0f
-                        }
-                        SensorAccuracy.MEDIUM -> {
-                            pill1.background?.setTint(activeColor); pill1.alpha = 1.0f
-                            pill2.background?.setTint(activeColor); pill2.alpha = 1.0f
-                            pill3.background?.setTint(inactiveColor); pill3.alpha = 0.2f
-                        }
-                        SensorAccuracy.LOW -> {
-                            pill1.background?.setTint(activeColor); pill1.alpha = 1.0f
-                            pill2.background?.setTint(inactiveColor); pill2.alpha = 0.2f
-                            pill3.background?.setTint(inactiveColor); pill3.alpha = 0.2f
-                        }
-                        SensorAccuracy.UNRELIABLE, SensorAccuracy.NO_CONTACT -> {
-                            pill1.background?.setTint(errorColor); pill1.alpha = 1.0f
-                            pill2.background?.setTint(inactiveColor); pill2.alpha = 0.2f
-                            pill3.background?.setTint(inactiveColor); pill3.alpha = 0.2f
-                        }
-                    }
-                }
-            }
-
-            if (VERSION.SDK_INT >= VERSION_CODES.O) {
-                sensorAccuracy.iconTintAttributeResourceId
-                    .let { MaterialColors.getColor(requireContext(), it, this::class.simpleName) }
-                    .let { ColorStateList.valueOf(it) }
-                    .also { menuItem.iconTintList = it }
-            }
-        }
-
-
-        override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-            return when (menuItem.itemId) {
-                R.id.action_sensor_status -> {
-                    showSensorStatusPopup()
-                    true
-                }
-
-
-                R.id.action_settings -> {
-                    showSettings()
-                    true
-                }
-
-                else -> false
-            }
-        }
-
-        private fun showSensorStatusPopup() {
-            val alertDialogBuilder = MaterialAlertDialogBuilder(requireContext())
-            val dialogContextInflater = LayoutInflater.from(alertDialogBuilder.context)
-
-            val dialogBinding = SensorAlertDialogViewBinding.inflate(dialogContextInflater, null, false)
-            dialogBinding.model = compassViewModel
-            dialogBinding.lifecycleOwner = viewLifecycleOwner
-
-            alertDialogBuilder
-                .setTitle(R.string.sensor_status)
-                .setView(dialogBinding.root)
-                .setPositiveButton(R.string.ok) { dialog, _ -> dialog.dismiss() }
-                .show()
-        }
-
-
-        private fun showSettings() {
-            findNavController().navigate(R.id.action_CompassFragment_to_SettingsFragment)
-        }
     }
 
 

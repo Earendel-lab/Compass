@@ -101,15 +101,21 @@ class SettingsFragment : Fragment() {
             findNavController().navigate(R.id.action_SettingsFragment_to_ThirdPartyLicensesFragment)
         }
 
+        val originalSource = view.findViewById<TextView>(R.id.original_source_code_link)
+        originalSource.setOnClickListener {
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Kr0oked/Compass"))
+            startActivity(i)
+        }
+
         val source = view.findViewById<TextView>(R.id.source_code_link)
         source.setOnClickListener {
-            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Kr0oked/Compass"))
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Earendel-lab/Compass"))
             startActivity(i)
         }
 
         val author = view.findViewById<TextView>(R.id.author_link)
         author.setOnClickListener {
-            val i = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:philipp.bobek@mailbox.org"))
+            val i = Intent(Intent.ACTION_VIEW, Uri.parse("https://earendel.pages.dev"))
             startActivity(i)
         }
 
